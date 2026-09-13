@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Manage tracked players</title>
+		<link rel="stylesheet" href="../assets/global.css?v=20260912" />
+		<link rel="stylesheet" href="./manage.css?v=20260912" />
+	</head>
+	<body>
+		<header class="header">
+			<h1 class="header__title">Manage tracked players</h1>
+		</header>
+		<main>
+			<noscript>Please enable JavaScript</noscript>
+			<div class="card">
+				<div class="card__title">Add a room</div>
+				<form class="form-add-room" id="form-add-room">
+					<input
+						class="text-input-field"
+						type="text"
+						name="room-name"
+						id="room-name"
+						placeholder="Player name"
+						required
+					/>
+					<button type="submit" class="button-primary">Insert</button>
+				</form>
+			</div>
+		</main>
+	</body>
+	<script src="./manage.js?v=20260912"></script>
+</html>
