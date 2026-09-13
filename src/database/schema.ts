@@ -5,7 +5,7 @@ export const rooms = sqliteTable("rooms", {
 	room_id: int().notNull(),
 	name: text().notNull(),
 	start_date: int({ mode: "timestamp" }).notNull(),
-	end_date: int({ mode: "timestamp" }).notNull(),
+	end_date: int({ mode: "timestamp" }),
 });
 
 export const playlist_items = sqliteTable("playlist_items", {
