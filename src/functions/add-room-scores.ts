@@ -104,7 +104,7 @@ async function addRoomScores(
 					player: score.user_id,
 					value: score.total_score,
 					mods: score.mods
-						.map((m) => `${m.acronym} (${m.settings})`)
+						.map((m) => `${m.acronym}${m.settings ? "*" : ""}`)
 						.join(", "),
 					external_source: false,
 					created: now,
@@ -140,7 +140,7 @@ async function addRoomScores(
 						player: userScore.user_id,
 						value: userScore.total_score,
 						mods: userScore.mods
-							.map((m) => `${m.acronym} (${m.settings})`)
+							.map((m) => `${m.acronym}${m.settings ? "*" : ""}`)
 							.join(", "),
 						external_source: true,
 						created: now,
@@ -155,7 +155,7 @@ async function addRoomScores(
 						player: score.user_id,
 						value: 0,
 						mods: score.mods
-							.map((m) => `${m.acronym} (${m.settings})`)
+							.map((m) => `${m.acronym}${m.settings ? "*" : ""}`)
 							.join(", "),
 						external_source: false,
 						created: now,
