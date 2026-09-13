@@ -32,6 +32,7 @@ export const scores = sqliteTable("scores", {
 		.notNull()
 		.references(() => players.osu_id),
 	created: int({ mode: "timestamp" }).notNull(),
+	external_source: int({ mode: "boolean" }),
 });
 
 export const players = sqliteTable("players", {
