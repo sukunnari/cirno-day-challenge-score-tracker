@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { addRoomWithPlaylist } from "../functions/add-room-playlist.js";
+import { addRoomScores } from "../functions/add-room-scores.js";
 
 // ======= Management api =======
 const MANAGEMENT_PASSWORD = process.env.MANAGE_PASSWORD;
@@ -49,6 +50,26 @@ manageApi.post("/add-room", async (c) => {
 	}
 
 	await addRoomWithPlaylist(room);
+
+	c.status(200);
+	return c.json({
+		success: true,
+	});
+});
+
+manageApi.post("/add-room-scores", async (c) => {
+	const reqData = await c.req.json();
+	const room = Number(reqData?.room);
+
+	if (isNaN(room)) {
+		c.status(401);
+		return c.json({
+			success: false,
+			message: "Invalid room id",
+		});
+	}
+
+	await addRoomScores(room);
 
 	c.status(200);
 	return c.json({
