@@ -18,7 +18,7 @@ export const playlist_items = sqliteTable("playlist_items", {
 	beatmapset_artist: text().notNull(),
 	beatmap_id: int().notNull(),
 	beatmap_version: text().notNull(), // "diff name"
-	beatmap_difficulty_rating: numeric().notNull(),
+	beatmap_difficulty_rating: int().notNull(),
 });
 
 export const scores = sqliteTable("scores", {
