@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { addRoomWithPlaylist } from "../functions/add-room-playlist.js";
 
 // ======= Management api =======
 const MANAGEMENT_PASSWORD = process.env.MANAGE_PASSWORD;
@@ -15,8 +16,6 @@ manageApi.use("/*", async (c, next) => {
 	try {
 		const headers = c.req.header();
 		const password = headers?.["api-password"] || "";
-
-		console.log(password, MANAGEMENT_PASSWORD);
 
 		if (password != MANAGEMENT_PASSWORD) {
 			c.status(401);
@@ -38,10 +37,22 @@ manageApi.use("/*", async (c, next) => {
 });
 
 manageApi.post("/add-room", async (c) => {
+	const reqData = await c.req.json();
+	const room = Number(reqData?.room);
+
+	if (isNaN(room)) {
+		c.status(401);
+		return c.json({
+			success: false,
+			message: "Invalid room id",
+		});
+	}
+
+	await addRoomWithPlaylist(room);
+
 	c.status(200);
 	return c.json({
-		success: false,
-		message: "This does nothing yet, sorry",
+		success: true,
 	});
 });
 
