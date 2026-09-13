@@ -14,20 +14,49 @@
 		<main>
 			<noscript>Please enable JavaScript</noscript>
 			<div class="card">
+				<div class="card__title">Password</div>
+				<div class="card__description">
+					Please enter the password to make a valid request to the API
+				</div>
+				<form class="form-password" id="form-password">
+					<input
+						class="text-input-field"
+						type="password"
+						name="password"
+						id="password"
+						required
+					/>
+				</form>
+			</div>
+			<div class="card">
 				<div class="card__title">Add a room</div>
 				<form class="form-add-room" id="form-add-room">
 					<input
 						class="text-input-field"
 						type="text"
-						name="room-name"
-						id="room-name"
-						placeholder="Player name"
+						name="room-id"
+						id="room-id"
+						placeholder="Room ID"
 						required
 					/>
-					<button type="submit" class="button-primary">Insert</button>
+					<button type="submit" class="button-primary">Insert room</button>
+				</form>
+			</div>
+			<div class="card">
+				<div class="card__title">Retrieve scores for a room</div>
+				<form class="form-add-room-scores" id="form-add-room-scores">
+					<input
+						class="text-input-field"
+						type="text"
+						name="room-id"
+						id="room-id-for-scores"
+						placeholder="Room ID"
+						required
+					/>
+					<button type="submit" class="button-primary">Retrieve scores</button>
 				</form>
 			</div>
 		</main>
 	</body>
-	<script src="./manage.js?v=20260912"></script>
+	<script src="./manage.js?v=20260913"></script>
 </html>
