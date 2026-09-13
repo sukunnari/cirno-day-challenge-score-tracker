@@ -36,6 +36,7 @@ async function getPlaylistScores(playlistId: number) {
 			total_scores: scores_table.value,
 			score_id: scores_table.score_id,
 			score_mods: scores_table.mods,
+			is_external: scores_table.external_source,
 		})
 		.from(scores_table)
 		.leftJoin(players, eq(scores_table.player, players.osu_id))

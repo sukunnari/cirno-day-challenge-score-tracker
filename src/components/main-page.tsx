@@ -18,6 +18,7 @@ async function MainPage({ queries }: { queries: Record<string, string> }) {
 		total_scores: number;
 		score_id?: number;
 		score_mods?: string;
+		is_external?: boolean;
 	}[] = [];
 
 	let playlistName = "";
@@ -44,6 +45,7 @@ async function MainPage({ queries }: { queries: Record<string, string> }) {
 				total_scores: s.total_scores,
 				score_id: s.score_id,
 				score_mods: s.score_mods || "",
+				is_external: s.is_external || false,
 			});
 		});
 	} else {
@@ -98,6 +100,7 @@ async function MainPage({ queries }: { queries: Record<string, string> }) {
 										<span>
 											{new Intl.NumberFormat("en-US").format(s.total_scores)}
 											{s.score_mods && ` (${s.score_mods})`}
+											{s.is_external && ` (fetched externally)`}
 											&nbsp;-&nbsp;
 											<a
 												href={`https://osu.ppy.sh/users/${s.player_id}`}
