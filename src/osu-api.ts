@@ -74,7 +74,7 @@ const OsuAPI = class {
 		return await OsuAPI.#api.getRoom(roomId);
 	};
 
-	static getPlaylistItems = async function (
+	static getPlaylistItemScores = async function (
 		roomId: number,
 		playlistId: number,
 	) {
