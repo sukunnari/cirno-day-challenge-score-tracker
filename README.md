@@ -25,4 +25,4 @@ Install [Git](https://git-scm.com/downloads) and [Nodejs](https://nodejs.org/en/
 `npm run build`
 7. Run the app:<br>
 `npm run start`
-8. Go to `/api/manage` to add the room. Technically you can add multiple rooms, but this app will only display the room as specified in .env
+8. Go to `/manage` to add the room. Technically you can add multiple rooms, but this app will only display the room as specified in .env

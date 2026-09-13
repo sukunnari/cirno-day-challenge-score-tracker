@@ -20,7 +20,7 @@ const app = new Hono();
 app.use("*", trimTrailingSlash());
 
 app.get("/manage", async (c) => {
-	return c.redirect("/manage/");
+	return c.redirect("./manage/");
 });
 app.route("/", manageApi);
 app.route("/", generalApi);
