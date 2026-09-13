@@ -14,6 +14,9 @@ document.querySelector("#password")?.addEventListener("change", (e) => {
 const formAddRoom = document.querySelector("#form-add-room");
 formAddRoom?.addEventListener("submit", async (e) => {
 	e.preventDefault();
+	alert(
+		"This will take a while, so please wait and don't interact with the page.",
+	);
 	try {
 		const fd = new FormData(e.target);
 		const res = await fetch("../api/manage/add-room", {
@@ -41,6 +44,9 @@ formAddRoom?.addEventListener("submit", async (e) => {
 const formAddRoomScores = document.querySelector("#form-add-room-scores");
 formAddRoomScores?.addEventListener("submit", async (e) => {
 	e.preventDefault();
+	alert(
+		"This will take a while, so please wait and don't interact with the page.",
+	);
 	try {
 		const fd = new FormData(e.target);
 		const res = await fetch("../api/manage/add-room-scores", {
