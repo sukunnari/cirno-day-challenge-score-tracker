@@ -65,7 +65,7 @@ async function MainPage({ queries }: { queries: Record<string, string> }) {
 				<meta charset="UTF-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<title>Daily Streakers Tracker</title>
-				<link rel="stylesheet" href="./assets/global.css?v=20260912" />
+				<link rel="stylesheet" href="./assets/global.css?v=20260914" />
 			</head>
 			<body>
 				<main>
