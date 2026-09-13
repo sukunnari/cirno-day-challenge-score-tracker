@@ -1,6 +1,6 @@
-# Daily Streakers Tracker
+# Cirno day challenge score tracker
 
-A website to track daily streakers (thx) from a specified list
+I forgot to turn off freestyle for the challenge, so people could just submit scores on other diff. This website fixes that by making those scores invalid and also retrieves the appropriate scores from the correct diff.
 
 ## Prerequisites
 
