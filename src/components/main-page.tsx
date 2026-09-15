@@ -131,15 +131,30 @@ async function MainPage({ queries }: { queries: Record<string, string> }) {
 						<div class="card__title">View other scores detail</div>
 						<ul>
 							<li>
-								<a href={`./`}>Overall</a>
+								{playlistQuery ? (
+									<a href={`./`}>Overall</a>
+								) : (
+									<span>
+										<b>Overall</b>
+									</span>
+								)}
 							</li>
-							{playlistRoom.map((p) => (
-								<li>
-									<a href={`./?playlist=${p.playlist_item_id}`}>
-										{`${p.beatmapset_artist} - ${p.beatmapset_title} [${p.beatmap_version}] | ${p.beatmap_difficulty_rating}`}
-									</a>
-								</li>
-							))}
+							{playlistRoom.map((p) => {
+								const playlistTitle = `${p.beatmapset_artist} - ${p.beatmapset_title} [${p.beatmap_version}] | ${p.beatmap_difficulty_rating}`;
+								return (
+									<li>
+										{playlistQuery === p.playlist_item_id ? (
+											<span>
+												<b>{playlistTitle}</b>
+											</span>
+										) : (
+											<a href={`./?playlist=${p.playlist_item_id}`}>
+												{playlistTitle}
+											</a>
+										)}
+									</li>
+								);
+							})}
 						</ul>
 					</div>
 
